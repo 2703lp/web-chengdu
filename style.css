@@ -175,10 +175,10 @@ footer {
 }
 
 /* 修复了图片路径和轮播延迟逻辑 */
-.slide1 { background-image: linear-gradient(rgba(5, 5, 8, 0.3), rgba(5, 5, 8, 0.7)), url('/img/cdd1.webp'); animation-delay: 0s; }
-.slide2 { background-image: linear-gradient(rgba(5, 5, 8, 0.3), rgba(5, 5, 8, 0.7)), url('/img/cdd2.webp'); animation-delay: 4s; }
-.slide3 { background-image: linear-gradient(rgba(5, 5, 8, 0.3), rgba(5, 5, 8, 0.7)), url('/img/cdd3.webp'); animation-delay: 8s; }
-.slide4 { background-image: linear-gradient(rgba(5, 5, 8, 0.3), rgba(5, 5, 8, 0.7)), url('/img/cdd4.webp'); animation-delay: 12s; }
+.slide1 { background-image: linear-gradient(rgba(5, 5, 8, 0.3), rgba(5, 5, 8, 0.7)), url('img/cdd1.webp'); animation-delay: 0s; }
+.slide2 { background-image: linear-gradient(rgba(5, 5, 8, 0.3), rgba(5, 5, 8, 0.7)), url('img/cdd2.webp'); animation-delay: 4s; }
+.slide3 { background-image: linear-gradient(rgba(5, 5, 8, 0.3), rgba(5, 5, 8, 0.7)), url('img/cdd3.webp'); animation-delay: 8s; }
+.slide4 { background-image: linear-gradient(rgba(5, 5, 8, 0.3), rgba(5, 5, 8, 0.7)), url('img/cdd4.webp'); animation-delay: 12s; }
 
 @keyframes fadeAnimation {
     0% { opacity: 0; transform: scale(1.02); }
