@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蜀韵·成都 | 4A/5A 交通矩阵</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-area">
+            <div class="logo-icon">蜀</div>
+            <h1>蜀韵·成都</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="food.html">美食</a></li>
+                <li><a href="sights.html">景点</a></li>
+                <li><a href="culture.html">文化</a></li>
+                <li><a href="travel.html" class="active">攻略</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page-container">
+        <h2 class="page-title">级景区交通</h2>
+        <p class="page-subtitle">[ NETWORK : 4A/5A SCENIC SPOTS & METRO TRANSIT ]</p>
+
+        <div class="map-svg-wrapper">
+            <!-- 图例 -->
+            <div class="map-legend">
+                <div class="legend-item"><div class="legend-dot" style="border-color: var(--neon-yellow);"></div><span>5A级景区</span></div>
+                <div class="legend-item"><div class="legend-dot" style="border-color: var(--neon-blue);"></div><span>4A级景区</span></div>
+                <div class="legend-item"><div class="legend-dot" style="border-color: var(--neon-pink);"></div><span>热门地标 / 枢纽</span></div>
+                <div class="legend-item"><div class="legend-line" style="background: var(--neon-blue);"></div><span>地铁1号线</span></div>
+                <div class="legend-item"><div class="legend-line" style="background: #00ff88;"></div><span>地铁2号线</span></div>
+                <div class="legend-item"><div class="legend-line" style="background: var(--neon-yellow);"></div><span>地铁3/4号线</span></div>
+                <div class="legend-item"><div class="legend-line" style="background: #ff8800;"></div><span>地铁8号线</span></div>
+                <div class="legend-item"><div class="legend-line" style="background: #ffffff; border-top: 1px dashed #fff; height: 0;"></div><span>景区直通车</span></div>
+            </div>
+
+            <!-- SVG 地图绘图区 1000x600 -->
+            <svg class="map-svg" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+                <!-- 地理底图 (网格与边界) -->
+                <polygon class="city-boundary" points="50,200 250,50 700,50 950,200 950,500 700,550 250,550 50,450" />
+                <path class="district-line" d="M 150,300 L 500,300 L 800,300" />
+                <path class="district-line" d="M 500,100 L 500,500" />
+                <path class="river" d="M 100,400 Q 300,300 500,350 T 900,250" />
+
+                <!-- ================= 轨道网 (底层) ================= -->
+                
+                <!-- 地铁1号线 (天蓝色，南北中轴线) -->
+                <!-- 路线从 (500,50) 直达 (500,550)，贯穿全部南北站点 -->
+                <path class="metro-line m-line-1" d="M 500,50 L 500,550" />
+                
+                <!-- 地铁2号线 (绿色，东西横轴) -->
+                <!-- 路线从 (50,300) 直达 (950,300)，贯穿东西 -->
+                <path class="metro-line m-line-2" d="M 50,300 L 950,300" />
+                
+                <!-- 地铁3/4号线 (黄色，西北-东南斜线) -->
+                <!-- 路线：青城山(150,100) -> 天府广场(500,300) -> 三圣花乡(700,450) -->
+                <path class="metro-line m-line-3" d="M 150,100 L 500,300 L 700,450" />
+                
+                <!-- 地铁8号线 (橙色，东侧南北线) -->
+                <path class="metro-line m-line-8" d="M 750,50 L 750,450" />
+
+                <!-- ================= 景区直通车 (白色虚线) ================= -->
+                <!-- 串联外围节点与主干道 -->
+                <!-- 天台山(100,550) -> 安仁(250,450) -> 武侯祠(500,400) -->
+                <path class="shuttle-line" d="M 100,550 L 250,450 L 500,400" />
+                <!-- 宽窄巷子(380,220) -> 金沙遗址(380,300) -> 杜甫草堂(250,300) -->
+                <path class="shuttle-line" d="M 380,220 L 380,300 L 250,300" />
+                <!-- 黄龙溪(500,500) -> 三圣花乡(700,450) -->
+                <path class="shuttle-line" d="M 500,500 L 700,450" />
+
+
+                <!-- ================= 节点层 (中层) ================= -->
+
+                <!-- 1. 核心地标：天府广场 (换乘枢纽) -->
+                <circle cx="500" cy="300" r="10" class="scenic-node node-transit" />
+                <circle cx="500" cy="300" r="10" class="pulse-ring pr-pink" />
+                <text x="515" y="305" class="node-label label-hot" style="font-size:15px; font-weight:bold;">天府广场</text>
+
+                <!-- 2. 5A级景区 (金色) -->
+                <circle cx="150" cy="100" r="8" class="scenic-node node-5a" />
+                <text x="165" y="105" class="node-label label-5a">青城山-都江堰</text>
+
+                <circle cx="250" cy="450" r="8" class="scenic-node node-5a" />
+                <text x="265" y="455" class="node-label label-5a">安仁古镇</text>
+
+                <circle cx="100" cy="550" r="8" class="scenic-node node-5a" />
+                <text x="115" y="555" class="node-label label-5a">天台山</text>
+
+                <!-- 3. 4A级及热门景区 (蓝/粉色) -->
+                <!-- 北部 -->
+                <circle cx="500" cy="100" r="6" class="scenic-node node-4a" />
+                <text x="515" y="105" class="node-label">宝光桂湖</text>
+
+                <circle cx="500" cy="180" r="7" class="scenic-node node-hot" />
+                <text x="515" y="185" class="node-label label-hot">熊猫基地</text>
+
+                <!-- 西部 -->
+                <circle cx="380" cy="220" r="6" class="scenic-node node-4a" />
+                <text x="395" y="225" class="node-label">宽窄巷子</text>
+
+                <circle cx="250" cy="300" r="6" class="scenic-node node-4a" />
+                <text x="265" y="305" class="node-label">杜甫草堂</text>
+
+                <circle cx="380" cy="300" r="6" class="scenic-node node-4a" />
+                <text x="395" y="305" class="node-label">金沙遗址</text>
+
+                <!-- 南部 -->
+                <circle cx="500" cy="400" r="7" class="scenic-node node-hot" />
+                <text x="515" y="405" class="node-label label-hot">武侯祠·锦里</text>
+
+                <circle cx="500" cy="500" r="6" class="scenic-node node-4a" />
+                <text x="515" y="505" class="node-label">黄龙溪古镇</text>
+
+                <!-- 东部 -->
+                <circle cx="680" cy="300" r="6" class="scenic-node node-4a" />
+                <text x="695" y="305" class="node-label">东郊记忆</text>
+
+                <circle cx="750" cy="200" r="6" class="scenic-node node-4a" />
+                <text x="765" y="205" class="node-label">洛带古镇</text>
+
+                <circle cx="700" cy="450" r="6" class="scenic-node node-4a" />
+                <text x="715" y="455" class="node-label">三圣花乡</text>
+
+                <!-- 4. 交通枢纽 (粉色小点) -->
+                <circle cx="50" cy="300" r="5" class="scenic-node node-transit" />
+                <text x="65" y="305" class="node-label label-hub">茶店子客运站</text>
+
+                <circle cx="500" cy="50" r="5" class="scenic-node node-transit" />
+                <text x="515" y="55" class="node-label label-hub">火车北站</text>
+
+                <circle cx="950" cy="300" r="5" class="scenic-node node-transit" />
+                <text x="965" y="305" class="node-label label-hub">成都东站</text>
+            </svg>
+        </div>
+
+        <table class="modern-table">
+            <thead>
+                <tr>
+                    <th>交通方式</th>
+                    <th>耗时 / 覆盖范围</th>
+                    <th>费用预估</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>地铁</td>
+                    <td>覆盖主城 4A 级景区</td>
+                    <td>¥3-12</td>
+                </tr>
+                <tr>
+                    <td>景区直通车</td>
+                    <td>远郊 5A 级景区直达</td>
+                    <td>¥25-35</td>
+                </tr>
+                <tr>
+                    <td>出租车</td>
+                    <td>视距离</td>
+                    <td>¥15-60</td>
+                </tr>
+                <tr>
+                    <td>共享单车</td>
+                    <td>适合短途</td>
+                    <td>¥1.5起</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p>© 2077 蜀韵·成都文化旅游宣传网 | SYSTEM ONLINE // ALL RIGHTS RESERVED</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蜀韵·成都 | 文化数据库</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 页头区域 -->
+    <header>
+        <div class="logo-area">
+            <div class="logo-icon">蜀</div>
+            <h1>蜀韵·成都</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="food.html">美食</a></li>
+                <li><a href="sights.html">景点</a></li>
+                <!-- 文化页面高亮 -->
+                <li><a href="culture.html" class="active">文化</a></li>
+                <li><a href="travel.html">攻略</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 页面主体：文化数据库 -->
+    <main class="page-container">
+        <h2 class="page-title">古蜀文明代码库</h2>
+        <p class="page-subtitle">[ ACCESSING : ANCIENT_SHUS_HERITAGE ]</p>
+
+        <div class="terminal-box">
+            <div class="scan-line"></div>
+            
+            <!-- 文化项 1：川剧变脸 -->
+            <details class="cyber-details">
+                <summary>
+                    <div class="details-index">01</div>
+                    <h4 class="details-title">川剧变脸 (Face-Changing)</h4>
+                    <div class="details-icon"></div>
+                </summary>
+                <div class="details-content">
+                    <div class="details-image">
+                        <img src="/img/wh1.webp" alt="川剧变脸">
+                    </div>
+                    <div class="details-text">
+                        <p>川剧是传统戏曲剧种之一，流行于四川东中部、重庆及贵州、云南部分地区。川剧变脸是川剧表演的特技之一，用于揭示剧中人物的内心及思想感情的变化，即把不可见、不可感的抽象的情绪和心理状态变成可见、可感的具体形象——脸谱。在瞬息之间切换面容，犹如赛博格进行物理形态的极速重载，是视觉与神秘主义的完美结合。</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 文化项 2：蜀锦蜀绣 -->
+            <details class="cyber-details">
+                <summary>
+                    <div class="details-index">02</div>
+                    <h4 class="details-title">蜀锦蜀绣 (Shu Brocade)</h4>
+                    <div class="details-icon"></div>
+                </summary>
+                <div class="details-content">
+                    <div class="details-image">
+                        <img src="/img/wh2.webp" alt="蜀锦蜀绣">
+                    </div>
+                    <div class="details-text">
+                        <p>蜀锦居中国四大名锦之首，是成都市的特产，中国国家地理标志产品。蜀绣又名“川绣”，与苏绣、湘绣、粤绣齐名，为中国四大名绣之一。经纬交错的丝线如同精密的光纤网络，传输着两千年来古蜀大地的美学数据，其针法严谨、针脚平齐、变化丰富、形象生动、富有立体感。</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 文化项 3：茶馆文化 -->
+            <details class="cyber-details">
+                <summary>
+                    <div class="details-index">03</div>
+                    <h4 class="details-title">茶馆文化 (Teahouse Culture)</h4>
+                    <div class="details-icon"></div>
+                </summary>
+                <div class="details-content">
+                    <div class="details-image">
+                        <img src="/img/wh3.webp" alt="成都茶馆">
+                    </div>
+                    <div class="details-text">
+                        <p>俗话说：“四川茶馆甲天下，成都茶馆甲四川。”成都的茶馆遍布大街小巷，是市民休闲、社交、信息交流的重要场所。盖碗茶的碰撞声是成都特有的低频白噪音。在这里，时间被按下暂停键，竹椅、矮桌、盖碗茶，泡出了成都人独有的“巴适”与闲适，是抵抗快节奏现代社会的慢生活防火墙。</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 文化项 4：三星堆遗址 -->
+            <details class="cyber-details">
+                <summary>
+                    <div class="details-index">04</div>
+                    <h4 class="details-title">三星堆遗址 (Sanxingdui Ruins)</h4>
+                    <div class="details-icon"></div>
+                </summary>
+                <div class="details-content">
+                    <div class="details-image">
+                        <img src="/img/wh4.webp" alt="三星堆青铜面具">
+                    </div>
+                    <div class="details-text">
+                        <p>三星堆古遗址位于四川省广汉市西北的鸭子河南岸，分布面积12平方千米，距今已有5000至3000年历史，是迄今在西南地区发现的范围最大、延续时间最长、文化内涵最丰富的古城、古国、古蜀文化遗址。青铜神树与纵目面具，仿佛是外星文明遗留在地球的远古科技终端，等待被重新激活。</p>
+                    </div>
+                </div>
+            </details>
+
+        </div>
+    </main>
+
+    <!-- 页脚区域 -->
+    <footer>
+        <p>© 2077 蜀韵·成都文化旅游宣传网 | SYSTEM ONLINE // ALL RIGHTS RESERVED</p>
+    </footer>
+
+    <!-- 新增：手风琴互斥逻辑（点击一项关闭其他项） -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 获取所有的折叠面板
+            const detailsElements = document.querySelectorAll('.cyber-details');
+            
+            detailsElements.forEach((targetDetail) => {
+                // 监听每个面板的 toggle 事件
+                targetDetail.addEventListener('toggle', () => {
+                    // 如果当前面板被打开了
+                    if (targetDetail.open) {
+                        // 遍历所有面板，把除了当前面板以外的其他面板全部关闭
+                        detailsElements.forEach((detail) => {
+                            if (detail !== targetDetail) {
+                                detail.removeAttribute('open');
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
